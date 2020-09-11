@@ -1,0 +1,32 @@
+{
+  "name": "my-simple-url-shortner",
+  "version": "1.0.0",
+  "description": "my url shortner",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feiyangfan/my-simple-url-shortner.git"
+  },
+  "author": "feiyangfan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feiyangfan/my-simple-url-shortner/issues"
+  },
+  "homepage": "https://github.com/feiyangfan/my-simple-url-shortner#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "helmet": "^4.1.1",
+    "monk": "^7.3.2",
+    "morgan": "^1.10.0",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "dotenv": "^8.2.0"
+  }
+}
