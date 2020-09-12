@@ -1,32 +1,28 @@
 {
   "name": "my-simple-url-shortner",
   "version": "1.0.0",
-  "description": "my url shortner",
+  "description": "A simple URL shortner I am trying to make.    The inspiration is that sometimes when I share youtube videos with my friends, the auto-generated link is not the same as what's been showing in the address bar. So I want to know why different URLs can link to the same website. And I want to build my own URL shortner and see if it works.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/feiyangfan/my-simple-url-shortner.git"
   },
-  "author": "feiyangfan",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/feiyangfan/my-simple-url-shortner/issues"
   },
   "homepage": "https://github.com/feiyangfan/my-simple-url-shortner#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "cors": "^2.8.5",
-    "helmet": "^4.1.1",
-    "monk": "^7.3.2",
-    "morgan": "^1.10.0",
-    "yup": "^0.29.3"
+    "mongoose": "^5.10.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "dotenv": "^8.2.0"
+    "nodemon": "^2.0.4"
   }
 }
