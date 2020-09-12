@@ -14,7 +14,15 @@
   </head>
   <body>
     <div class="container">
-      <h1>My URL Shortener</h1>
+      <nav class="navbar navbar-light bg-white">
+        <span class="navbar-brand mb-0 h1">My URL Shortener</span>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">My github</a>
+          </li>
+        </ul>
+      </nav>
+
       <form action="/shortUrls" method="POST" class="my-4 form-inline">
         <label for="fullUrl" class="sr-only">URL</label>
         <input
@@ -46,5 +54,6 @@
         </table>
       </div>
     </div>
+    <div>This is a url shortener I built, github link</div>
   </body>
 </html>

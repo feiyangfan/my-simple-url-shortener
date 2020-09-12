@@ -12,7 +12,7 @@ const limiter = rateLimit({
   max: 100, // limit each IP to 100 requests per windowMs
 });
 
-//  apply to all requests
+//  apply to shortUrls requests
 app.use("/shortUrls", limiter);
 
 mongoose.connect(`${process.env.MONGODB_URI}`, {
