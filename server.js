@@ -2,14 +2,24 @@ const express = require("express");
 const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const app = express();
+require("dotenv").config();
 
-mongoose.connect(
-  "mongodb+srv://fei:991104@cluster0.xkruu.mongodb.net/urlShortener?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const rateLimit = require("express-rate-limit");
+app.set("trust proxy", 1);
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+});
+
+//  apply to all requests
+app.use("/shortUrls", limiter);
+
+mongoose.connect(`${process.env.MONGODB_URI}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
