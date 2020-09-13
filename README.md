@@ -1,5 +1,10 @@
 ## my-simple-url-shortener
-A simple URL shortener I built with with express, bootstrap, mongoDB, and some other packages (detailed list on github).   
+A simple URL shortener I built with with express, bootstrap, mongoDB, and some other packages (detailed list on github).  
+
+The app is deployed on heroku([Link](https://ffy-url-shortener.herokuapp.com/)).   
+
+Since this is just a project, the URL is not actually shortened so much because I did not buy a custom short domain, I just used the domain that comes with heroku, which is pretty long.  
+
  The inspiration is that sometimes when I share youtube videos with my friends, the auto-generated link is not the same as what's been showing in the address bar. So I want to know why different URLs can link to the same website. And I want to build my own URL shortner and see if it works.
  
 
@@ -28,7 +33,6 @@ From my understanding of URL shortener, the way it works is that when a
 
 
 ## Other infomations
-Since this is just a simple project, all shortened URLs only works for 10 minutes after generated, then they will be deleted.  
-And since this is just a project, the URL is not actually shortened so much because I did not buy a custom short domain, I just used the domain that comes with heroku, which is pretty long.  
+Since this is just a simple project, all shortened URLs only works for 10 minutes after generated, then they will be deleted.    
 
 
