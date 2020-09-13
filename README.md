@@ -20,16 +20,27 @@ Go to [Website deployed on heroku](https://ffy-url-shortener.herokuapp.com/)
 **Demo**  
 <img src="./readme-assets/demo.gif"	width="600px"  alt="demo">
 
-## My understandings of URL shortener
-From my understanding of URL shortener, the way it works is that when a
+## Waht I learned from this project:
+1. **Waht is a URL shortener**: From my understanding of URL shortener, the way it works is that when a
         user enter a URL that is to be shortened, we send it to our database and
         automatically generate a corresponding unique key, which is going to be
         shortened URL, and store them together in our database. Then when a user
         accesses a shortened URL, we find the corresponding original URL in our
-        database and redirect the user to it. 
+        database and redirect the user to it.  
+        
+2. Use of **bootstraps** so that I do not need to write my own css stylesheet, which significantly imporved the development experience. Maybe in my-website project, I should consider using something similar in react to build my frontend instead of writhing css for every components.  
+
+3. **How to connect database to the app** and how to hide ENVIRONMENT_VARIABLES
+
+4. **GET**, **POST**, **Redirect**
+
+5. In database, the use of **index** to create **TTL(time to live)** entries.
 
 ## Some more features I might add
-* Copy button
+* Copy button to copy URL easily.
+* Change style/design of the app.
+* Build a frontend and make this app a backend API
+* If a use enters a already shortened URL, just find it in the database instead of generate a new one.
 
 
 ## Other infomations
