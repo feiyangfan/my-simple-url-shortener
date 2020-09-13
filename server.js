@@ -15,7 +15,6 @@ const limiter = rateLimit({
 //  apply to shortUrls requests
 app.use("/shortUrls", limiter);
 
-console.log(`${process.env.MONGODB_URI}`);
 mongoose.connect(`${process.env.MONGODB_URI}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

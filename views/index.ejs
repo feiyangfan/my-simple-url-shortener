@@ -9,11 +9,12 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Url shortener</title>
+    <title>My URL shortener</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container min-vh-100">
       <nav class="navbar navbar-light bg-white">
         <span class="navbar-brand mb-0 h1">My URL Shortener</span>
         <ul class="nav">
@@ -22,12 +23,13 @@
           </li>
         </ul>
       </nav>
-      <div class="container">
+
+      <div class="container h-100">
         <form action="/shortUrls" method="POST" class="my-4 form-inline">
           <label for="fullUrl" class="sr-only">URL</label>
           <input
             required
-            placeholder="Enter URL here"
+            placeholder="Enter URL here, prefixed with https://"
             type="url"
             name="fullUrl"
             id="fullUrl"
@@ -35,11 +37,8 @@
           />
           <button type="submit" class="btn btn-outline-dark">Submit</button>
         </form>
-        <p>
-          Since this is just a simple project, all shortened URLs only works for
-          10 minutes after generated, then they will be deleted.
-        </p>
-        <div class="table-responsive">
+
+        <div class="table-responsive pb-5 mb-5 h-70">
           <table class="table table-hover">
             <thead class="thead-dark">
               <tr>
@@ -50,32 +49,45 @@
             <tbody>
               <% shortUrls.forEach(shortUrl => { %>
               <tr>
-                <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
                 <td>
-                  <a href="<%= shortUrl.short %>"><%= shortUrl.short %></a>
+                  <a href="<%= shortUrl.full %>"><%= shortUrl.full %></a>
+                </td>
+                <td>
+                  <a href="<%= shortUrl.short %>"
+                    >https://ffy-url-shortener.herokuapp.com/<%= shortUrl.short
+                    %>
+                  </a>
                 </td>
               </tr>
               <% }) %>
             </tbody>
           </table>
         </div>
+
+        <div class="container pt-5 mt-5">
+          <p>
+            Since this is just a simple project, all shortened URLs only works
+            for 10 minutes after generated, then they will be deleted.<br />
+          </p>
+          <p>
+            And since this is just a project, the URL is not actually shortened
+            so much because I didn't buy a custom short domain, I just used the
+            domain that comes with heroku, which is pretty long.
+          </p>
+          <p>
+            I built this URL shortener with with express, bootstrap, mongoDB,
+            and some other packages (detailed list on github). The app is
+            deployed on Heroku. The github link is
+            <a href="https://github.com/feiyangfan/my-simple-url-shortener"
+              >here</a
+            >.<br />
+
+            <a href="https://github.com/feiyangfan/my-simple-url-shortener"
+              >My understanding of URL shortener</a
+            >
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="container fixed-bottom">
-      <p>
-        This is a url shortener I built with nodejs with express, bootstrap,
-        mongoDB, and some other packages(list in github link). github link is
-        <a href="https://github.com/feiyangfan/my-simple-url-shortener">here</a
-        >.<br />
-      </p>
-      <p>
-        From my understanding of URL shortener, the way it works is that when a
-        user enter a URL that is to be shortened, we send it to our database and
-        automatically generate a corresponding unique key, which is going to be
-        shortened URL, and store them together in our database. Then when a user
-        accesses a shortened URL, we find the corresponding original URL in our
-        database and redirect the user to it.
-      </p>
     </div>
   </body>
 </html>
