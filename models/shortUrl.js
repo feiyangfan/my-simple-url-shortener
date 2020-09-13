@@ -13,6 +13,6 @@ const shortUrlSchema = new mongoose.Schema({
   },
   // createdAt: { type: Date, expires: "1m", default: Date.now }, // expires in 30 seconds
 });
-shortUrlSchema.index({ createdAt: 1 }, { expireAfterSeconds: 600 });
+shortUrlSchema.index({ createdAt: 1 }, { expireAfterSeconds: 30 });
 
 module.exports = mongoose.model("ShortUrl", shortUrlSchema);
