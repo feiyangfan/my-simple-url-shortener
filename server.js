@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
 const app = express();
-if (process.env.NODE_ENV !== "production") require("dotenv").config();
+require("dotenv").config();
 
 const rateLimit = require("express-rate-limit");
 app.set("trust proxy", 1);
