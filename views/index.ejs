@@ -13,81 +13,104 @@
 
     <title>My URL shortener</title>
   </head>
-  <body>
-    <div class="container min-vh-100">
-      <nav class="navbar navbar-light bg-white">
-        <span class="navbar-brand mb-0 h1">My URL Shortener</span>
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">My github</a>
-          </li>
-        </ul>
-      </nav>
+  <body class="min-vh-100 d-flex flex-column">
+    <main role="main" class="h-100">
+      <div class="container">
+        <nav class="navbar navbar-light bg-white">
+          <span class="navbar-brand mb-0 h1">My URL Shortener</span>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="#">My github</a>
+            </li>
+          </ul>
+        </nav>
 
-      <div class="container h-100">
-        <form action="/shortUrls" method="POST" class="my-4 form-inline">
-          <label for="fullUrl" class="sr-only">URL</label>
-          <input
-            required
-            placeholder="Enter URL here, prefixed with https://"
-            type="url"
-            name="fullUrl"
-            id="fullUrl"
-            class="form-control mr-2 col"
-          />
-          <button type="submit" class="btn btn-outline-dark">Shorten</button>
-        </form>
+        <div class="container h-100">
+          <form action="/shortUrls" method="POST" class="my-4 form-inline">
+            <label for="fullUrl" class="sr-only">URL</label>
+            <input
+              required
+              placeholder="Enter URL here, prefixed with https://"
+              type="url"
+              name="fullUrl"
+              id="fullUrl"
+              class="form-control mr-2 col"
+            />
+            <button type="submit" class="btn btn-outline-dark">Shorten</button>
+          </form>
+          <div><h3>A table of all shortened URLs</h3></div>
 
-        <div class="table-responsive pb-5 mb-5 h-70">
-          <table class="table table-hover">
-            <thead class="thead-dark">
-              <tr>
-                <th>Original URL</th>
-                <th>Shortened URL</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% shortUrls.forEach(shortUrl => { %>
-              <tr>
-                <td>
-                  <a href="<%= shortUrl.full %>"><%= shortUrl.full %></a>
-                </td>
-                <td>
-                  <a href="<%= shortUrl.short %>"
-                    >https://ffy-url-shortener.herokuapp.com/<%= shortUrl.short
-                    %>
-                  </a>
-                </td>
-              </tr>
-              <% }) %>
-            </tbody>
-          </table>
-        </div>
+          <div class="table-responsive pb-5 mb-5 h-70">
+            <table class="table table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th>Original URL</th>
+                  <th>Shortened URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% shortUrls.forEach(shortUrl => { %>
+                <tr>
+                  <td>
+                    <a href="<%= shortUrl.full %>"><%= shortUrl.full %></a>
+                  </td>
+                  <td>
+                    <a href="<%= shortUrl.short %>"
+                      >https://ffy-url-shortener.herokuapp.com/<%=
+                      shortUrl.short %>
+                    </a>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
 
-        <div class="container pt-5 mt-5">
-          <p>
-            Since this is just a simple project, all shortened URLs only works
-            for 10 minutes after generated, then they will be deleted.<br />
-          </p>
-          <p>
-            And since this is just a project, the URL is not actually shortened
-            so much because I didn't buy a custom short domain, I just used the
-            domain that comes with heroku, which is pretty long.
-          </p>
-          <p>
-            I built this URL shortener with with express, bootstrap, mongoDB,
-            and some other packages (detailed list on github). The app is
-            deployed on Heroku. The github link is
-            <a href="https://github.com/feiyangfan/my-simple-url-shortener"
-              >here</a
-            >.<br />
+          <div class="container pt-5 mt-5">
+            <p>
+              Since this is just a simple project, all shortened URLs only works
+              for 10 minutes after generated, then they will be deleted.<br />
+            </p>
+            <p>
+              And since this is just a project, the URL is not actually
+              shortened so much because I didn't buy a custom short domain, I
+              just used the domain that comes with heroku, which is pretty long.
+            </p>
+            <p>
+              I built this URL shortener with with express, bootstrap, mongoDB,
+              and some other packages (detailed list on github). The app is
+              deployed on Heroku. The github link is
+              <a href="https://github.com/feiyangfan/my-simple-url-shortener"
+                >here</a
+              >.<br />
 
-            <a href="https://github.com/feiyangfan/my-simple-url-shortener"
-              >My understanding of URL shortener</a
-            >
-          </p>
+              <a href="https://github.com/feiyangfan/my-simple-url-shortener"
+                >My understanding of URL shortener</a
+              >
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
+    <footer class="mt-auto card-footer text-center text-muted">
+      This is a simple URL shortener built by
+      <a href="https://github.com/feiyangfan">fanfeiya</a> with Express,
+      MongoDB, Bootstrap, and some other packages
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

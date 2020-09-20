@@ -4,6 +4,8 @@ const ShortUrl = require("./models/shortUrl");
 const app = express();
 require("dotenv").config();
 
+const PORT = process.env.PORT || 5000;
+
 const rateLimit = require("express-rate-limit");
 app.set("trust proxy", 1);
 
@@ -43,4 +45,6 @@ app.get("/:shortUrl", async (req, res) => {
   res.redirect(shortUrl.full);
 });
 
-app.listen(process.env.PORT || 5000);
+app.listen(PORT, () => {
+  console.log(`App listening at http://localhost:${PORT}`);
+});
